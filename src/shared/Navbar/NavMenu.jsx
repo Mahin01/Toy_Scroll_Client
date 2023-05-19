@@ -6,7 +6,7 @@ const NavMenu = () => {
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
-              <Navbar.Brand className='brand-title' to="/">Toy Scroll</Navbar.Brand>
+              <Navbar.Brand className='brand-title' to="/"><Image src='logo.png' roundedCircle></Image> Toy Scroll</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="m-auto menu">
@@ -26,22 +26,19 @@ const NavMenu = () => {
                 {/* Right Side Navbar */}
                 <Nav>
                 <Nav.Link>
-                    <Link className='btn login-btn text-decoration-none menu-item' to="/add-a-toy">
+                    <Link className='text-decoration-none menu-item' to="/add-a-toy">
                         <Button className="add-toy-btn" variant="primary">Add A Toy</Button> 
                     </Link>
                 </Nav.Link>
 
                     <Nav.Link>
-                        <Link>
-                            <span>
-                                <Image></Image>
-                            </span>
-                            <Button className="logout-btn" variant="primary">Logout</Button> 
+                        <Link className='text-decoration-none menu-item'>
+                            <Button className="logout-btn btn text-decoration-none" variant="primary">Logout</Button> 
                         </Link>
                     </Nav.Link>
 
                     <Nav.Link>
-                        <Link className='btn login-btn text-decoration-none menu-item' to="/login">Login</Link>
+                        <Link className='login-btn btn btn-primary text-decoration-none menu-item' to="/login">Login</Link>
                     </Nav.Link>
                 </Nav>
               </Navbar.Collapse>

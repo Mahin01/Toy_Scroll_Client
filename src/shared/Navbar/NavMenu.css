@@ -1,0 +1,23 @@
+.brand-title{
+    font-weight: 700;
+    font-size: 28px;
+    font-style: italic;
+    color: #54CCD1;
+}
+
+.menu-item{
+    font-size: 16px;
+    font-weight: 600;
+    color: #606060;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    background: #FDC70F;
+    color: #ffffff;
+}
+
+.active-link{
+    color: #54CCD1;
+}
