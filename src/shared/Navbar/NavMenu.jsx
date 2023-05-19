@@ -1,8 +1,8 @@
-import { Button, Container, Image, Nav} from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar} from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import "./Navbar.css";
+import "./NavMenu.css";
 
-const Navbar = () => {
+const NavMenu = () => {
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
@@ -50,4 +50,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavMenu;
