@@ -1,22 +1,56 @@
-import React from 'react';
+import "./Collection.css";
 
 const Collection = () => {
     return (
-        <div className="container-gallery">
-        <div className="popup popup-1">
-            <img className="img-responsive" alt="Pop Up Gallery" src="gallery/gallery-img-1.jpg" />
-        </div>
-        <div className="popup popup-2">
-            <img className="img-responsive" alt="Pop Up Gallery" src="gallery/gallery-img-2.jpg" />
-        </div>
-        <div className="popup popup-3">
-            <img className="img-responsive" alt="Pop Up Gallery" src="gallery/gallery-img-3.jpg" />
-        </div>
-        <div className="popup popup-4">
-            <img className="img-responsive" alt="Pop Up Gallery" src="gallery/gallery-img-4.jpg" />
-        </div>
-        <div className="popup popup-5">
-            <img className="img-responsive" alt="Pop Up Gallery" src="gallery/gallery-img-5.jpg" />
+        
+    <div className="container">
+
+        <h1 className="text-center mt-4 mb-0">Exclusive Collection</h1>
+
+        <hr style={{ color:"#48C9D0" , width:"200px", borderWidth: "2px"}} className="mt-2 m-auto mb-5" />
+
+        <div className="row text-center text-lg-start">
+
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-1.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-2.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-3.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-4.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-5.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-6.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-7.jpg" alt="" />
+            </a>
+            </div>
+            <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+                <img className="img-fluid img-thumbnail" src="gallery/gallery-img-8.jpg" alt="" />
+            </a>
+            </div>
         </div>
     </div>
     );
