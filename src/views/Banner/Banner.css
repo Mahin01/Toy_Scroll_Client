@@ -1,6 +1,16 @@
-.banner-info{
-    background-image: url('banner.jpg');
-    background-repeat: no-repeat;
-    width: 100vw;
-    background-size: cover;
+.banner-heading{
+    font-weight: 700;
+    font-size: 35px;
+    color: #444444;
+}
+
+.banner-info-text{
+    color: #8d8d8d !important;
+}
+
+.explore-button{
+    background: #48C8D1;
+}
+.explore-button:hover{
+    background: #48C8D1;
 }
