@@ -33,13 +33,11 @@ const Home = () => {
 
                 <hr style={{ color:"#48C9D0" , width:"200px", borderWidth: "2px"}} className="mt-2 m-auto mb-5" />
 
-             <Row>
-             {carsDataByCat.map(singleCatData => <CarsByCatTabs
-             key = {singleCatData.id}
-             singleCatData = {singleCatData}
-             >
-             </CarsByCatTabs>
-            )}
+             <Row className='row row-cols-1 g-4 m-auto'>
+                {
+                <CarsByCatTabs data = {carsDataByCat}>
+                </CarsByCatTabs>
+                }
              </Row>
             </Container>
         </div>
