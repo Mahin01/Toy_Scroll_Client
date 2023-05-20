@@ -27,18 +27,18 @@ const NavMenu = () => {
                 <Nav>
                 <Nav.Link>
                     <Link className='text-decoration-none menu-item' to="/add-a-toy">
-                        <Button className="add-toy-btn" variant="primary">Add A Toy</Button> 
+                        <Button className="add-toy-btn">Add A Toy</Button> 
                     </Link>
                 </Nav.Link>
 
                     <Nav.Link>
                         <Link className='text-decoration-none menu-item'>
-                            <Button className="logout-btn btn text-decoration-none" variant="primary">Logout</Button> 
+                            <Button className="logout-btn btn text-decoration-none">Logout</Button> 
                         </Link>
                     </Nav.Link>
 
                     <Nav.Link>
-                        <Link className='login-btn btn btn-primary text-decoration-none menu-item' to="/login">Login</Link>
+                        <Link className='login-btn btn text-decoration-none menu-item' to="/login">Login</Link>
                     </Nav.Link>
                 </Nav>
               </Navbar.Collapse>

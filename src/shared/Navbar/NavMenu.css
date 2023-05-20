@@ -17,6 +17,12 @@
     background: #FDC70F;
     color: #ffffff;
 }
+.btn:hover{
+    outline: none;
+    border: none;
+    background: #FDC70F;
+    color: #ffffff;
+}
 
 .active-link{
     color: #54CCD1;
