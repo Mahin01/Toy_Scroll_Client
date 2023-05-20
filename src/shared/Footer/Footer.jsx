@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <>
           <footer className="text-white text-center text-lg-start" style={{ background : '#444444' }}>
-            <div className="container py-4">
+            <div className="container py-5">
               <div className="row mt-4">
 
             <div className="col-lg-2 col-md-12 mt-5 mb-md-0">

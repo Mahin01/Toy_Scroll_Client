@@ -1,0 +1,6 @@
+.banner-info{
+    background-image: url('banner.jpg');
+    background-repeat: no-repeat;
+    width: 100vw;
+    background-size: cover;
+}
