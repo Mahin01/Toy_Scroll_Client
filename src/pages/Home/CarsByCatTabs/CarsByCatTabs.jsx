@@ -18,7 +18,6 @@ const CarsByCatTabs = ({ data }) => {
 
         {data.map((category, index) => (
           <TabPanel key={index}>
-            <h2>{category.category}</h2>
             <Row>
               {category.items.map((item, itemIndex) => (
                 <Col key={itemIndex} sm={4} className="mb-3">
