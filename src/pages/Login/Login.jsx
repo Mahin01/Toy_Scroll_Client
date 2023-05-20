@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
+   
     return (
         <div className='container login-container my-4'>
         <div className="d-lg-flex half">
@@ -14,7 +16,7 @@ const Login = () => {
             <h3>Sign In</h3>
             <p className="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
             </div>
-            <form action="#" method="post">
+            <form onSubmit={HandleSignIn}>
             <div className="form-group first">
             <label htmlFor="username">Username</label>
             <input type="text" className="form-control" id="username" />
