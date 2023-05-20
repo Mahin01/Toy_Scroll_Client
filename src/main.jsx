@@ -7,7 +7,7 @@ import {
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from './layout/Layout';
-import Home from './views/Home/Home';
+import Home from './pages/Home/Home';
 
 
 const router = createBrowserRouter([
