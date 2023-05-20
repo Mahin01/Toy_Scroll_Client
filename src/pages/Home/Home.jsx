@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import Banner from '../../views/Banner/Banner';
 import Collection from '../../views/Collection/Collection';
+import { Container, Row } from 'react-bootstrap';
+import CarsByCatTabs from './CarsByCatTabs/CarsByCatTabs';
+
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -8,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         fetch('http://localhost:5000/cars-by-category')
         .then(res => res.json())
-        .then(data => {console.log(data);
+        .then(data => {setCarsDataByCat(data);
         setLoading(false);
         })
         
@@ -25,6 +28,20 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Collection></Collection>
+            <Container className='my-5'>
+                <h2 className='text-center mb-3'>Shop by category</h2>
+
+                <hr style={{ color:"#48C9D0" , width:"200px", borderWidth: "2px"}} className="mt-2 m-auto mb-5" />
+
+             <Row>
+             {carsDataByCat.map(singleCatData => <CarsByCatTabs
+             key = {singleCatData.id}
+             singleCatData = {singleCatData}
+             >
+             </CarsByCatTabs>
+            )}
+             </Row>
+            </Container>
         </div>
     );
 };
