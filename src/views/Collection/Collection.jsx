@@ -5,7 +5,7 @@ const Collection = () => {
         
     <div className="container">
 
-        <h1 className="text-center mt-4 mb-0">Exclusive Collection</h1>
+        <h1 className="text-center gallery-title mt-4 mb-0">Exclusive Collection</h1>
 
         <hr style={{ color:"#48C9D0" , width:"200px", borderWidth: "2px"}} className="mt-2 m-auto mb-5" />
 

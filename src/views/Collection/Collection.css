@@ -1,3 +1,9 @@
+.gallery-title{
+    font-size: 28px;
+    color: #444444;
+    text-transform: uppercase;
+}
+
 .img-thumbnail{
     width: 300px;
     height: 200px;
