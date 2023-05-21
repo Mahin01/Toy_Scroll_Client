@@ -43,7 +43,7 @@ const Register = () => {
                         <div className="col-lg-6 mb-5 mb-lg-0">
                         <div className="card">
                             <div className="card-body py-5 px-md-5">
-                            <form onSubmit={handleRegister}>
+                            <form>
                                 <div className="row">
                                 <div className="col-md-6 mb-4">
                                     <div className="form-outline">
