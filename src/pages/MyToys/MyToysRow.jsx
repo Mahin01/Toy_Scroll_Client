@@ -1,12 +1,7 @@
 import React from 'react';
 
-const MyToysRow = ({ addedToy }) => {
+const MyToysRow = ({ addedToy, handleDelete }) => {
     const {_id, ToyName, seller_name, seller_email, quantity, price, Photo_URL } = addedToy;
-
-    // Handle Delete Data
-    const handleDelete = id => {
-       
-    }
 
     return (
         <div className='container'>
