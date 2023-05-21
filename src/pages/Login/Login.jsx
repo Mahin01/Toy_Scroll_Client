@@ -1,4 +1,25 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from "../../configs/firebase.config";
+
 const Login = () => {
+
+    const auth = getAuth(app);
+
+    const handleLogin = event => {
+
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch(error => console.log(error));
+    }
    
     return (
         <div className='container login-container my-4'>
@@ -13,14 +34,14 @@ const Login = () => {
             <h3>Sign In</h3>
             <p className="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
             </div>
-            <form onSubmit={HandleSignIn}>
+            <form onSubmit={handleLogin}>
             <div className="form-group first">
-            <label htmlFor="username">Username</label>
-            <input type="text" className="form-control" id="username" />
+            <label htmlFor="username">Email</label>
+            <input type="text" className="form-control" name="email"/>
             </div>
             <div className="form-group last mb-3">
             <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" id="password" />
+            <input type="password" className="form-control" id="password" name="password"/>
             </div>
             <div className="d-flex mb-5 align-items-center">
             <label className="control control--checkbox mb-0"><span className="caption">Remember me</span>

@@ -1,25 +1,27 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import app from "../../configs/firebase.config";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
 
+    const { createUser } = useContext(AuthContext);
+
     const handleRegister = event => {
+
         event.preventDefault();
+
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const password = form.pwd.value;
-        const avatar = form.avatar.value;
-    
-        const auth = getAuth(app);
-        createUserWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            const user = result.user;
-            console.log('created user', user);
-            form.reset();
-        })
-        .catch(error => console.error(error))
-      }
+        const password = form.password.value;
+        console.log(name, email, password)
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log('created user', user)
+            })
+            .catch(error => console.log(error))
+    }
  
     return (
             <div className="container mb-5">
