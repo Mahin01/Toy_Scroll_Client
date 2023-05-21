@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllToysCard = ({toyItem}) => {
     console.log(toyItem);
 
-    const {_id, ToyName, Seller, SubCategory, AvailableQuantity, Price, Photo_URL } = toyItem;
+    const {_id, ToyName, seller_name, seller_email, SubCategory, quantity, price, Photo_URL } = toyItem;
     return (
               <Col xs={12} md={4}>
                 <Card>
@@ -13,20 +13,20 @@ const AllToysCard = ({toyItem}) => {
                     <Card.Body>
                         <Card.Title className='title'> {ToyName} </Card.Title>
                         <Card.Text className="recipe-info">
-                        {Seller}
+                        Seller Name : {seller_name}
                         </Card.Text>
                         <Card.Text className="recipe-info">
-                            {SubCategory}
+                           E-mail : {seller_email}
                         </Card.Text>
                         <Card.Text className="recipe-info">
-                            Available Quantity : {AvailableQuantity}
+                            Available Quantity : {quantity}
                         </Card.Text>
                         <Card.Text className="recipe-info">
-                            Price : {Price}
+                            Price : {price}
                         </Card.Text>
 
                         <Link to={`/toy-details/${_id}`} className='btn btn-primary view-recipe'>
-                            View Recipes
+                            View Details
                         </Link>
                     </Card.Body>
                 </Card>  

@@ -1,8 +1,17 @@
 import { Button, Container, Image, Nav, Navbar} from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import "./NavMenu.css";
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const NavMenu = () => {
+  const {user, logout} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logout()
+    .then(() =>{})
+    .catch( error => console.log(error))
+  }
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
@@ -31,15 +40,17 @@ const NavMenu = () => {
                     </Link>
                 </Nav.Link>
 
-                    <Nav.Link>
-                        <Link className='text-decoration-none menu-item'>
-                            <Button className="logout-btn btn text-decoration-none">Logout</Button> 
-                        </Link>
-                    </Nav.Link>
-
-                    <Nav.Link>
-                        <Link className='login-btn btn text-decoration-none menu-item' to="/login">Login</Link>
-                    </Nav.Link>
+                <Nav>
+                {user ? 
+                <div>
+                    <Button onClick={handleLogOut} className="logout-btn mt-2" variant="primary">Logout</Button> 
+                </div>
+                :
+                <Nav.Link>
+                  <Link className='btn login-btn text-decoration-none menu-item' to="/login">Login</Link>
+                </Nav.Link>
+                }
+                </Nav>
                 </Nav>
               </Navbar.Collapse>
             </Container>
