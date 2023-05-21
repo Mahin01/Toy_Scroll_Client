@@ -4,7 +4,24 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 
 const Register = () => {
+
+    const {user, createUser} = useContext(AuthContext);
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.pwd.value;
+        const avatar = form.avatar.value;
     
+        createUser(email, password)
+        .then(result => {
+          const loggedUser = result.user;
+          form.reset();
+        })
+        .catch(error => console.error(error))
+      }
+ 
     return (
             <div className="container mb-5">
                 <div className="px-4 py-5 px-md-5 text-center text-lg-start" style={{ backgroundColor: "hsl(0, 0%, 96%)" }}>
