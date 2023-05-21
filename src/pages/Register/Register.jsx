@@ -66,7 +66,7 @@ const Register = () => {
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                <input type="password" id="form3Example4" className="form-control" name='pwd'/>
+                                <input type="password" id="form3Example4" className="form-control" name='password'/>
                                 <label className="form-label" htmlFor="form3Example4">Password</label>
                                 </div>
 
