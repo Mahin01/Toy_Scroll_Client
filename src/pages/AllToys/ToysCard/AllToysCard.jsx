@@ -1,5 +1,6 @@
 import { Button, Card, Col } from "react-bootstrap";
 import "./AllToysCard.css";
+import { Link } from "react-router-dom";
 
 const AllToysCard = ({toyItem}) => {
     console.log(toyItem);
@@ -8,7 +9,7 @@ const AllToysCard = ({toyItem}) => {
     return (
               <Col xs={12} md={4}>
                 <Card>
-                    <Card.Img style={{ height:'200px' }} variant="top" src="Lahmacun.jpg" />
+                    <Card.Img style={{ height:'200px' }} variant="top" src={Photo_URL} />
                     <Card.Body>
                         <Card.Title className='title'> {ToyName} </Card.Title>
                         <Card.Text className="recipe-info">
@@ -24,7 +25,9 @@ const AllToysCard = ({toyItem}) => {
                             Price : {Price}
                         </Card.Text>
 
-                        <Button className='read-more'>View Details</Button>
+                        <Link to={`/toy-details/${_id}`} className='btn btn-primary view-recipe'>
+                            View Recipes
+                        </Link>
                     </Card.Body>
                 </Card>  
             </Col>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import AllToysCard from './AllToysCard';
+import AllToysCard from './ToysCard/AllToysCard';
+
 
 const AllToys = () => {
     const [allToys, setAllToys] = useState([]);
