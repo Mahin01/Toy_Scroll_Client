@@ -1,11 +1,8 @@
-
-import { useContext } from 'react';
-import { AuthContext } from '../../providers/AuthProviders';
-
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import app from "../../configs/firebase.config";
 
 const Register = () => {
 
-    const {user, createUser} = useContext(AuthContext);
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,10 +11,12 @@ const Register = () => {
         const password = form.pwd.value;
         const avatar = form.avatar.value;
     
-        createUser(email, password)
+        const auth = getAuth(app);
+        createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
-          const loggedUser = result.user;
-          form.reset();
+            const user = result.user;
+            console.log('created user', user);
+            form.reset();
         })
         .catch(error => console.error(error))
       }
@@ -43,7 +42,7 @@ const Register = () => {
                         <div className="col-lg-6 mb-5 mb-lg-0">
                         <div className="card">
                             <div className="card-body py-5 px-md-5">
-                            <form>
+                            <form onSubmit={handleRegister}>
                                 <div className="row">
                                 <div className="col-md-6 mb-4">
                                     <div className="form-outline">
@@ -60,7 +59,7 @@ const Register = () => {
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                <input type="email" id="form3Example3" className="form-control" name='avatar'/>
+                                <input type="text" id="form3Example3" className="form-control" name='avatar'/>
                                 <label className="form-label" htmlFor="form3Example3">Photo URL</label>
                                 </div>
 

@@ -10,7 +10,6 @@ import Layout from './layout/Layout';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
-import PrivateRoute from './routes/PrivateRoutes';
 import AddToy from './pages/AddToy/AddToy';
 import AllToys from './pages/AllToys/AllToys';
 import ToyDetails from './pages/AllToys/ToyDetails/ToyDetails';
