@@ -1,9 +1,9 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import app from "../../configs/firebase.config";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
 
-    const auth = getAuth(app);
+    const {user, signIn, googleSignIn} = useContext(AuthContext);
 
     const handleLogin = event => {
 
@@ -12,13 +12,22 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        signInWithEmailAndPassword(auth, email, password)
+        signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
             })
             .catch(error => console.log(error));
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.log(error));
     }
    
     return (
@@ -53,15 +62,9 @@ const Login = () => {
             <input type="submit" value="Log In" className="btn btn-block btn-primary" />
             <span className="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
             <div className="social-login">
-            <a href="#" className="facebook btn d-flex justify-content-center align-items-center">
-            <span className="icon-facebook mr-3"></span> Login with Facebook
-            </a>
-            <a href="#" className="twitter btn d-flex justify-content-center align-items-center">
-            <span className="icon-twitter mr-3"></span> Login with Twitter
-            </a>
-            <a href="#" className="google btn d-flex justify-content-center align-items-center">
-            <span className="icon-google mr-3"></span> Login with Google
-            </a>
+                <button onClick={handleGoogleSignIn} href="#" className="google btn d-flex justify-content-center align-items-center">
+                <span className="icon-google mr-3"></span> Login with Google
+                </button>
             </div>
             </form>
             </div>
