@@ -1,6 +1,44 @@
 
-
 const AddToy = () => {
+
+    const handleAddToy = event =>{
+        event.preventDefault();
+
+        const form = event.target;
+        const seller_name = form.name.value;
+        const seller_email = form.email.value;
+        const ToyName = form.ToyName.value;
+        const quantity = form.quantity.value;
+        const Photo_URL = form.Photo_URL.value;
+        const price = form.price.value;
+        const newToy = {
+            seller_name, 
+            seller_email, 
+            ToyName,
+            quantity, 
+            Photo_URL,
+            price
+        }
+
+        console.log(newToy);
+
+        fetch('http://localhost:5000/add-toy', {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(newToy)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            // if(data.insertedId){
+            //     alert('Your Product Added successfully')
+            // }
+        })
+
+    }
+
     return (
             <div className="container mb-5">
                 <h2 className="text-center display-3">Add Toy</h2>
@@ -23,7 +61,7 @@ const AddToy = () => {
                         <div className="col-lg-6 mb-5 mb-lg-0">
                         <div className="card">
                             <div className="card-body py-5 px-md-5">
-                            <form>
+                            <form onSubmit={handleAddToy}>
                                 <div className="row">
                                 <div className="col-md-6 mb-4">
                                     <div className="form-outline">
@@ -33,7 +71,7 @@ const AddToy = () => {
                                 </div>
                                 <div className="col-md-6 mb-4">
                                     <div className="form-outline">
-                                    <input type="email" id="form3Example2" className="form-control" name='text'/>
+                                    <input type="email" id="form3Example2" className="form-control" name='email'/>
                                     <label className="form-label" htmlFor="form3Example2">Email Address</label>
                                     </div>
                                 </div>
@@ -42,30 +80,30 @@ const AddToy = () => {
                                 <div className="row">
                                 <div className="col-md-6 mb-4">
                                     <div className="form-outline">
-                                    <input type="text" id="form3Example1" className="form-control" name="name" />
+                                    <input type="text" id="form3Example1" className="form-control" name="ToyName" />
                                     <label className="form-label" htmlFor="form3Example1">Toy Name</label>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-4">
                                     <div className="form-outline">
-                                    <input type="text" id="form3Example2" className="form-control" name='text'/>
+                                    <input type="text" id="form3Example2" className="form-control" name='quantity'/>
                                     <label className="form-label" htmlFor="form3Example2">Quantity</label>
                                     </div>
                                 </div>
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                <input type="email" id="form3Example3" className="form-control" name='avatar'/>
+                                <input type="text" id="form3Example3" className="form-control" name='Photo_URL'/>
                                 <label className="form-label" htmlFor="form3Example3">Photo URL</label>
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                <input type="text" id="form3Example4" className="form-control" name='pwd'/>
+                                <input type="text" id="form3Example4" className="form-control" name='price'/>
                                 <label className="form-label" htmlFor="form3Example4">Price</label>
                                 </div>
 
                                 <div className="form-outline mb-3">
-                                    <textarea className="form-control" id="textAreaExample1" rows="5" placeholder="Toy Description"></textarea>
+                                    <textarea className="form-control" id="textAreaExample1" rows="5" placeholder="Toy Description" name="description"></textarea>
                                 </div>
 
                                 <button type="submit" className="btn btn-primary btn-block mb-4">
