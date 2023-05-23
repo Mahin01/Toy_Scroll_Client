@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
@@ -20,7 +21,14 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log('created user', user)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  form.reset();
             })
             .catch(error => console.log(error))
     }
