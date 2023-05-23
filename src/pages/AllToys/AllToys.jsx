@@ -12,7 +12,7 @@ const AllToys = () => {
     return (
         <div className='container'>
             <h2 className="page-title text-center">All Toys</h2>
-            <div className="row row-cols-1 g-3">
+            <div className="row row-cols-1 g-3 mb-5">
                 {allToys.map( item => <AllToysCard 
                 key={item._id}
                 toyItem = {item}
