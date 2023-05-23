@@ -5,7 +5,7 @@ import AllToysCard from './ToysCard/AllToysCard';
 const AllToys = () => {
     const [allToys, setAllToys] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/all-toys")
+        fetch("https://toy-scroll-server.vercel.app/all-toys")
         .then(res => res.json())
         .then(data => setAllToys(data))
     }, [])

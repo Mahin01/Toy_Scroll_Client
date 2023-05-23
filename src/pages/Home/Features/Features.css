@@ -1,0 +1,25 @@
+/* service section starts */
+
+#service .figure  .figure-img{
+    border: 1px solid #cccccc;
+    padding: 10px;
+    transition: 1s all ease;
+}
+
+#service .figure  .figure-img:hover{
+    border:none;
+    border-radius: 50%;
+    background-color: #FF9334;
+    color: #ffffff;
+}
+
+#service .figure h5,p{
+    color: #000000;
+}
+
+
+
+#service .container{
+    padding-top: 60px;
+    padding-bottom: 80px;
+}

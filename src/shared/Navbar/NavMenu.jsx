@@ -15,7 +15,7 @@ const NavMenu = () => {
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
-              <Navbar.Brand className='brand-title' to="/"><Image src='logo.png' roundedCircle></Image> Toy Scroll</Navbar.Brand>
+              <Link className='text-decoration-none' to="/"><Navbar.Brand className='brand-title'><Image src='logo.png' roundedCircle></Image> Toy Scroll</Navbar.Brand></Link>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="m-auto menu">

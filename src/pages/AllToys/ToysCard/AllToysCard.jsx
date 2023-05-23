@@ -3,7 +3,6 @@ import "./AllToysCard.css";
 import { Link } from "react-router-dom";
 
 const AllToysCard = ({toyItem}) => {
-    console.log(toyItem);
 
     const {_id, ToyName, seller_name, seller_email, SubCategory, quantity, price, Photo_URL } = toyItem;
     return (

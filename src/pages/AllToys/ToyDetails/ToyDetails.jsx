@@ -1,12 +1,15 @@
 import { Button, Col, Container, Figure, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 
 const ToyDetails = () => {
     const singleToyDetails = useLoaderData();
     console.log(singleToyDetails);
+    const dynamicTitle = "Toy Scroll|All Toys";
     const {_id, ToyName, seller_name, seller_email,  SubCategory, ToyDetails, quantity, price, Photo_URL } = singleToyDetails;
     return (
         <Container className='banner'>
+            <Helmet>{dynamicTitle}</Helmet>
             <Row className="my-5">
 
             <Col xs={12} md={6}>

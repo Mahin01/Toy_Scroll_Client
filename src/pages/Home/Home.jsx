@@ -4,13 +4,16 @@ import Collection from './Collection/Collection';
 import { Container, Row } from 'react-bootstrap';
 import CarsByCatTabs from './CarsByCatTabs/CarsByCatTabs';
 import "./Home.css";
+import { Helmet } from 'react-helmet';
+import Features from './Features/Features';
 
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
     const [carsDataByCat, setCarsDataByCat] = useState([]);
+    const dynamicTitle = "Toy Scroll|Home";
     useEffect(() => {
-        fetch('https://toy-scroll-server.vercel.app/cars-by-category')
+        fetch('fakeData/carsDataByCat.json')
         .then(res => res.json())
         .then(data => {setCarsDataByCat(data);
         setLoading(false);
@@ -27,6 +30,7 @@ const Home = () => {
     }
     return (
         <div>
+            <Helmet> {dynamicTitle} </Helmet>
             <Banner></Banner>
             <Collection></Collection>
             <Container className='my-5'>
@@ -41,6 +45,7 @@ const Home = () => {
                 }
              </Row>
             </Container>
+            <Features></Features>
         </div>
     );
 };

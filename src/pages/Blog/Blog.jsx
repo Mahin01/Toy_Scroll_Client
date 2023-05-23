@@ -1,11 +1,12 @@
-import React from 'react';
+import { Helmet } from 'react-helmet';
 import './Blog.css';
 
 
 const Blog = () => {
-
+    const dynamicTitle = "Toy Scroll|Blog";
     return (
         <div className="container">
+          <Helmet>{dynamicTitle}</Helmet>
         <div className='route-title'>
         <h2 className="blog-heading text-center mb-5">Blog Questions: </h2>
         </div>

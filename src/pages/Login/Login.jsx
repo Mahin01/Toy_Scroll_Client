@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
+import "./Login.css";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 
     const {user, signIn, googleSignIn} = useContext(AuthContext);
+    const dynamicTitle = "Toy Scroll|Login";
 
     const handleLogin = event => {
 
@@ -32,6 +36,9 @@ const Login = () => {
    
     return (
         <div className='container login-container my-4'>
+             <Helmet>
+                <title>{dynamicTitle}</title>
+            </Helmet>
         <div className="d-lg-flex half">
             <div className="col col-lg-5 bg order-md-2">
                 <img style={{ width:"100%", height:"100%" }} src='banner.jpg' />
@@ -60,9 +67,10 @@ const Login = () => {
             <span className="ml-auto"><a href="#" className="forgot-pass">Forgot Password</a></span>
             </div>
             <input type="submit" value="Log In" className="btn btn-block btn-primary" />
+            <p className='signUp-link my-3'>Don't Have an account? Register <Link to="/register">Here</Link></p>
             <span className="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
             <div className="social-login">
-                <button onClick={handleGoogleSignIn} href="#" className="google btn d-flex justify-content-center align-items-center">
+                <button onClick={handleGoogleSignIn} href="#" className="google w-100 btn d-flex justify-content-center align-items-center">
                 <span className="icon-google mr-3"></span> Login with Google
                 </button>
             </div>

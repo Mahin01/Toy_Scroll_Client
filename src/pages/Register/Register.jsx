@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const dynamicTitle = "Toy Scroll|Register";
 
     const handleRegister = event => {
 
@@ -25,6 +27,7 @@ const Register = () => {
  
     return (
             <div className="container mb-5">
+                <Helmet> {dynamicTitle} </Helmet>
                 <div className="px-4 py-5 px-md-5 text-center text-lg-start" style={{ backgroundColor: "hsl(0, 0%, 96%)" }}>
                     <div className="container">
                     <div className="row gx-lg-5 align-items-center">

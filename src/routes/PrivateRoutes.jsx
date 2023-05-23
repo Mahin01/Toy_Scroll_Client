@@ -8,14 +8,15 @@ const PrivateRoute = ({ children }) => {
 
     if(loading){
         return <div className="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-        <div className="progress-bar bg-success" style="width: 25%"></div>
+        <div className="progress-bar bg-success" style={{ width:"25%" }}></div>
       </div>
     }
 
-    if(user){
+    if(user?.email){
         return children;
     }
-    return <Navigate to="/login" replace={true} ></Navigate>;
+
+    return <Navigate to="/login" replace></Navigate>;
 };
 
 export default PrivateRoute;

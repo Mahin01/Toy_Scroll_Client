@@ -1,4 +1,4 @@
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -24,8 +24,16 @@ const CarsByCatTabs = ({ data }) => {
                   <div>
                     <img src={item.picture} alt={item.name} />
                     <h3>{item.name}</h3>
-                    <p>Price: {item.price}</p>
-                    <p>Rating: {item.rating}</p>
+                    <p>Price: {item.price}</p> 
+                      <div style={{ color:"goldenrod" }} className="rating mb-2">
+                        <span className="text-dark">Rating: </span>
+                            <span className="star">&#9733;</span>
+                            <span className="star">&#9733;</span>
+                            <span className="star">&#9733;</span>
+                            <span className="star">&#9733;</span>
+                            <span className="star">&#9734;</span>
+                      </div>
+                      <Button>View Details</Button>
                   </div>
                 </Col>
               ))}

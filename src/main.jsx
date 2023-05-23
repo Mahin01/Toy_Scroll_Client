@@ -17,6 +17,8 @@ import Blog from './pages/Blog/Blog';
 import AuthProvider from './providers/AuthProvider';
 import PrivateRoute from './routes/PrivateRoutes';
 import MyToys from './pages/MyToys/MyToys';
+import Error from './pages/ErrorPage/Error';
+import UpdateToy from './pages/UpdateToy/UpdateToy';
 
 
 const router = createBrowserRouter([
@@ -34,7 +36,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-toys",
-        element: <MyToys></MyToys>
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },
+      {
+        path: "/update-toy/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader: ({params}) => fetch(`https://toy-scroll-server.vercel.app/toy-details/${params.id}`)
       },
       {
         path: "/login",
@@ -61,10 +68,16 @@ const router = createBrowserRouter([
         <PrivateRoute>
           <ToyDetails></ToyDetails>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/toy-details/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-scroll-server.vercel.app/toy-details/${params.id}`)
       }
     ]
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
+    errorElement: <Error></Error>,
   }
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

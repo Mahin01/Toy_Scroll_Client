@@ -11,6 +11,10 @@
     color: #606060;
 }
 
+.menu-item:hover{
+    color: #606060;
+}
+
 .btn{
     outline: none;
     border: none;
